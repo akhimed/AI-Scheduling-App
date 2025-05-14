@@ -25,16 +25,16 @@ A fullstack intelligent scheduling platform for businesses, built using:
 
 ## 📁 Project Structure
 📦 AI-Scheduling-App
-├── backend/
-│ ├── app.py
-│ ├── scheduler.py
-│ ├── database.py
-│ ├── requirements.txt
-├── frontend/
-│ ├── *.html
-│ ├── script.js
-│ ├── styles.css
-├── .gitignore
+ ├── backend/
+ │ ├── app.py
+ │ ├── scheduler.py
+ │ ├── database.py
+ │ ├── requirements.txt
+ ├── frontend/
+ │ ├── *.html
+ │ ├── script.js
+ │ ├── styles.css
+ ├── .gitignore
 
 ## 📌 Setup Instructions
 
