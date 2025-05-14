@@ -48,11 +48,11 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
 
 ### 3. Configure your .env file:
-OPENAI_API_KEY=your-key
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your-password
-DB_NAME=worksync
+OPENAI_API_KEY=your-key <br>
+DB_HOST=localhost <br>
+DB_USER=root <br>
+DB_PASSWORD=your-password <br>
+DB_NAME=worksync <br>
 
 ### 4. Run the Flask app:
 python app.py
