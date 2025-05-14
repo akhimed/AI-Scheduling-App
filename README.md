@@ -35,7 +35,9 @@ A fullstack intelligent scheduling platform for businesses, built using:
  │ ├── script.js
  │ ├── styles.css
  ├── .gitignore
-
+f
+ff
+f
 ## 📌 Setup Instructions
 
 ### 1. Clone the repo:
