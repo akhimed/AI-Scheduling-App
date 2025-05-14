@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>WorkSync Analytics Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const role = sessionStorage.getItem("role");
+      if (role !== "owner") {
+        alert("Unauthorized access.");
+        window.location.href = "calendar.html";
+      }
+    });
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f7fb;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1.title {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .chart-box {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1.title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <span class="nav-logo">WorkSync</span>
+  
+      <button id="hamburger" class="hamburger">&#9776;</button>
+  
+      <ul id="navLinks">
+        <li><a href="landing.html">Home</a></li>
+        <li><a href="index.html">Add Availability</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li id="dashboardItem"><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="dashboard_stats.html">📈 Analytics Dashboard</a></li>
+        <li id="manageShiftsItem" style="display: none;"><a href="manage_shifts.html">Manage Shifts</a></li>
+        <li id="loginItem"><a href="login.html">Login</a></li>
+        <li id="registerItem"><a href="register.html">Register</a></li>
+        <li id="logoutItem" style="display: none;"><a href="#" onclick="logoutUser()">Logout</a></li>
+        <li><a href="https://worksynclms.duckdns.org/" target="_blank">WorkSync LMS</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+  <h1 class="title">📊 WorkSync Analytics Dashboard</h1>
+
+  <div class="dashboard-grid">
+    <div class="chart-box">
+      <h3>Shifts Per Employee</h3>
+      <canvas id="shiftsPerEmployeeChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Total Hours Worked</h3>
+      <canvas id="totalHoursChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Shifts Per Day</h3>
+      <canvas id="shiftsPerDayChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Daily Coverage</h3>
+      <canvas id="coverageChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Swap Request Stats</h3>
+      <canvas id="swapStatsChart"></canvas>
+    </div>
+  </div>
+
+  <script src="dashboard_stats.js"></script>
+  <script>
+    // Show/hide nav based on role
+    document.addEventListener("DOMContentLoaded", () => {
+      const role = sessionStorage.getItem("role");
+      document.getElementById("dashboardItem").style.display = (role === "owner") ? "inline" : "none";
+      document.getElementById("manageShiftsItem").style.display = (role === "owner") ? "inline" : "none";
+      document.getElementById("loginItem").style.display = role ? "none" : "inline";
+      document.getElementById("registerItem").style.display = role ? "none" : "inline";
+      document.getElementById("logoutItem").style.display = role ? "inline" : "none";
+    });
+
+    function logoutUser() {
+      sessionStorage.clear();
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <script>
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("nav-open");
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+
+# Environment variables
+.env
+
+# Node modules (if ever used)
+node_modules/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+
+# Other
+*.zip
+
+# Python virtual environment
+backend/venv/

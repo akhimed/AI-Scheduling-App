@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+          <span class="nav-logo">WorkSync</span>
+      
+          <button id="hamburger" class="hamburger">&#9776;</button>
+      
+          <ul id="navLinks">
+            <li><a href="landing.html">Home</a></li>
+            <li><a href="index.html">Add Availability</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li id="dashboardItem"><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard_stats.html">📈 Analytics Dashboard</a></li>
+            <li id="manageShiftsItem" style="display: none;"><a href="manage_shifts.html">Manage Shifts</a></li>
+            <li id="loginItem"><a href="login.html">Login</a></li>
+            <li id="registerItem"><a href="register.html">Register</a></li>
+            <li id="logoutItem" style="display: none;"><a href="#" onclick="logoutUser()">Logout</a></li>
+            <li><a href="https://worksynclms.duckdns.org/" target="_blank">WorkSync LMS</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+
+    <h1 class="title">Owner Dashboard</h1>
+
+    <div style="width: 100%;">
+        <div id="ownerControls" class="dashboard-controls" style="display: none;">
+            <button onclick="confirmAISchedule()" class="dashboard-btn generate-btn">Generate AI Schedule</button>
+            <button onclick="confirmPostSchedule()" class="dashboard-btn post-btn">Post Schedule</button>
+        </div>
+    </div>
+
+    <div id="loadingSpinner" style="display: none; text-align: center; margin-top: 20px;">
+        <p id="spinnerMessage">Processing...</p>
+        <div class="spinner"></div>
+    </div>
+
+
+    <div id="calendar"></div>
+    <!-- Manual Shift Form (Owner Only) -->
+    <!-- Manual Shift Form (Owner Only) -->
+    <div id="manualShiftContainer" style="display: none; margin-top: 30px; text-align: center;">
+        <h2>Add Manual Shift</h2>
+    
+        <label for="shiftNameSelect">Employee:</label>
+        <select id="shiftNameSelect"></select>
+    
+        <label for="shiftDateInput">Date:</label>
+        <input type="date" id="shiftDateInput" />
+    
+        <label for="shiftStartTime">Start Time:</label>
+        <select id="shiftStartTime">
+            <option value="">Select start time</option>
+            <option value="1 AM">1 AM</option>
+            <option value="2 AM">2 AM</option>
+            <option value="3 AM">3 AM</option>
+            <option value="4 AM">4 AM</option>
+            <option value="5 AM">5 AM</option>
+            <option value="6 AM">6 AM</option>
+            <option value="7 AM">7 AM</option>
+            <option value="8 AM">8 AM</option>
+            <option value="9 AM">9 AM</option>
+            <option value="10 AM">10 AM</option>
+            <option value="11 AM">11 AM</option>
+            <option value="12 PM">12 PM</option>
+            <option value="1 PM">1 PM</option>
+            <option value="2 PM">2 PM</option>
+            <option value="3 PM">3 PM</option>
+            <option value="4 PM">4 PM</option>
+            <option value="5 PM">5 PM</option>
+            <option value="6 PM">6 PM</option>
+            <option value="7 PM">7 PM</option>
+            <option value="8 PM">8 PM</option>
+            <option value="9 PM">9 PM</option>
+            <option value="10 PM">10 PM</option>
+            <option value="11 PM">11 PM</option>
+            <option value="12 AM">12 AM</option>
+        </select>
+    
+        <label for="shiftEndTime">End Time:</label>
+        <select id="shiftEndTime">
+            <option value="">Select end time</option>
+            <option value="1 AM">1 AM</option>
+            <option value="2 AM">2 AM</option>
+            <option value="3 AM">3 AM</option>
+            <option value="4 AM">4 AM</option>
+            <option value="5 AM">5 AM</option>
+            <option value="6 AM">6 AM</option>
+            <option value="7 AM">7 AM</option>
+            <option value="8 AM">8 AM</option>
+            <option value="9 AM">9 AM</option>
+            <option value="10 AM">10 AM</option>
+            <option value="11 AM">11 AM</option>
+            <option value="12 PM">12 PM</option>
+            <option value="1 PM">1 PM</option>
+            <option value="2 PM">2 PM</option>
+            <option value="3 PM">3 PM</option>
+            <option value="4 PM">4 PM</option>
+            <option value="5 PM">5 PM</option>
+            <option value="6 PM">6 PM</option>
+            <option value="7 PM">7 PM</option>
+            <option value="8 PM">8 PM</option>
+            <option value="9 PM">9 PM</option>
+            <option value="10 PM">10 PM</option>
+            <option value="11 PM">11 PM</option>
+            <option value="12 AM">12 AM</option>
+        </select>
+    
+        <br><br>
+        <button onclick="submitManualShift()" class="dashboard-btn post-btn">Submit Manual Shift</button>
+    </div>
+    
+
+
+    <p id="scheduleMessage" style="margin-top: 10px; font-style: italic;"></p>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <p id="confirmationMessage">Are you sure?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="modal-btn yes-btn">Yes</button>
+                <button id="confirmNo" class="modal-btn no-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        let calendar = null;
+    
+        document.addEventListener("DOMContentLoaded", () => {
+            updateNavbarVisibility();
+            setupDashboard();  // Renders calendar
+    
+            if (sessionStorage.getItem("role") === "owner") {
+                const manualShiftContainer = document.getElementById("manualShiftContainer");
+                if (manualShiftContainer) {
+                    manualShiftContainer.style.display = "block";
+                    populateUserDropdown();
+                }
+            }
+        });
+    </script>
+    
+
+
+    <footer>
+        <p>This project was created as part of an academic course at George Mason University and is intended for educational purposes only. All rights reserved.</p>
+    </footer>
+    <!-- Trash Zone for Shift Deletion -->
+    <div id="trashZone" style="
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #e53935;
+        color: white;
+        padding: 18px 22px;
+        border-radius: 50%;
+        font-size: 22px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        z-index: 9999;
+        cursor: grab;
+        user-select: none;
+    ">
+        🗑️
+    </div>
+    <script>
+        document.getElementById("hamburger").addEventListener("click", () => {
+          document.getElementById("navLinks").classList.toggle("nav-open");
+        });
+      </script>
+      
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="register-page"> <!-- reuse the same styling class -->
+
+  <nav>
+    <div class="nav-container">
+      <span class="nav-logo">WorkSync</span>
+  
+      <button id="hamburger" class="hamburger">&#9776;</button>
+  
+      <ul id="navLinks">
+        <li><a href="landing.html">Home</a></li>
+        <li><a href="index.html">Add Availability</a></li>
+        <li><a href="calendar.html">Calendar</a></li>
+        <li id="dashboardItem"><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="dashboard_stats.html">📈 Analytics Dashboard</a></li>
+        <li id="manageShiftsItem" style="display: none;"><a href="manage_shifts.html">Manage Shifts</a></li>
+        <li id="loginItem"><a href="login.html">Login</a></li>
+        <li id="registerItem"><a href="register.html">Register</a></li>
+        <li id="logoutItem" style="display: none;"><a href="#" onclick="logoutUser()">Logout</a></li>
+        <li><a href="https://worksynclms.duckdns.org/" target="_blank">WorkSync LMS</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+  <h1 class="title">Login</h1>
+
+  <div class="container">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="loginUser(event)">Login</button>
+
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    updateNavbarVisibility();
+  </script>
+
+  <footer>
+    <p>This project was created as part of an academic course at George Mason University and is intended for educational purposes only. All rights reserved.</p>
+  </footer>
+  <script>
+    document.getElementById("hamburger").addEventListener("click", () => {
+      document.getElementById("navLinks").classList.toggle("nav-open");
+    });
+  </script>
+  
+</body>
+</html>

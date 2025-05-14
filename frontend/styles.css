@@ -1,0 +1,1087 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9fb;
+    color: #333;
+}
+
+nav {
+    background-color: #1e1e2f;
+    padding: 19px 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17.6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+nav ul li a:hover {
+    background-color: #00d1b2;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 209, 178, 0.3);
+}
+
+
+h1 {
+    margin: 2rem 0 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1e1e2f;
+}
+
+#calendar {
+    max-width: 90%;
+    margin: 0 auto;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#scheduleMessage {
+    margin-top: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+h1.title{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+footer {
+    background-color: #1e1e2f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 40px;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-page form {
+    max-width: 400px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+label {
+    font-size: 14px;
+    color: #444;
+}
+
+.register-page button {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #00d1b2, #00b89c);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 209, 178, 0.2);
+}
+
+.register-page button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 209, 178, 0.3);
+}
+
+.register-page button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(0, 209, 178, 0.2);
+}
+
+.register-page .role-selection {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 300px; /* Limits total width */
+    margin: 0 auto;   /* Centers the group horizontally */
+}
+
+
+.role-option {
+    background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    user-select: none;
+    color: #333;
+}
+
+.role-option:hover {
+    border-color: #0c8f84;
+    box-shadow: 0 4px 10px rgba(0, 209, 178, 0.2);
+}
+
+.role-option input[type="radio"] {
+    display: none;
+}
+
+.role-option input[type="radio"]:checked + * {
+    color: #00d1b2;
+}
+
+.role-option:has(input[type="radio"]:checked) {
+    background: linear-gradient(135deg, #00d1b2, #00b89c);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(0, 209, 178, 0.3);
+    border-color: transparent;
+}
+
+.register-page .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    max-width: 300px; /* Limit width for visual balance */
+    margin: 0 auto;   /* Center the button group */
+}
+
+.register-page .reset-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ccc, #ddd);
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.reset-btn:hover {
+    background: #bbb;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.register-page .container {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+.register-page .container h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #1e1e2f;
+}
+
+.register-page input[type="text"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+}
+
+input[type="email"] {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: 0.3s ease;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    border-color: #00d1b2;
+    box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.2);
+}
+
+
+.register-page input[type="text"]:focus {
+    outline: none;
+    border-color: #00d1b2;
+    box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.2);
+}
+
+
+.register-page .form-buttons button {
+    flex: 1;
+    max-width: 140px;
+}
+.register-page .role-option {
+    flex: 1;
+    text-align: center;
+}
+
+.spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #00d1b2;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .availability-group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.availability-tip {
+    color: gray;
+    font-size: 13px;
+    margin-top: -2px;
+    margin-bottom: 6px;
+    text-align: left;
+}
+
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  
+  .fc-event {
+    cursor: pointer;
+}
+
+.fc-event:hover {
+    filter: brightness(1.1);
+    transition: 0.2s ease;
+}
+
+
+/* 💻 Shared dashboard button style */
+.dashboard-btn {
+    padding: 10px 24px;
+    margin: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 🔷 Generate AI Schedule button */
+.generate-btn {
+    background: linear-gradient(to right, #3b82f6, #6366f1);
+    color: white;
+}
+
+.generate-btn:hover {
+    background: linear-gradient(to right, #2563eb, #4f46e5);
+    box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+    transform: translateY(-2px);
+}
+
+/* 🟢 Post Schedule button */
+.post-btn {
+    background: linear-gradient(to right, #10b981, #06b6d4);
+    color: white;
+}
+
+.post-btn:hover {
+    background: linear-gradient(to right, #059669, #0891b2);
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+
+.dashboard-controls {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+.dashboard-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .dashboard-controls {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  /* Center the button container */
+#ownerControls {
+    text-align: center;
+  }
+  
+  /* 🧊 Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+  }
+  
+  .modal-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  .modal-btn {
+    flex: 1;
+    padding: 10px 0;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .yes-btn {
+    background-color: #00d1b2;
+    color: white;
+  }
+  
+  .yes-btn:hover {
+    background-color: #00b89c;
+  }
+  
+  .no-btn {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .no-btn:hover {
+    background-color: #cfcfcf;
+  }
+  
+
+  @keyframes popFade {
+    0% { transform: scale(1); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0; }
+  }
+  
+  .toast {
+    color: white;
+    max-width: 300px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .toast {
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 320px;
+    text-align: center;
+    white-space: normal;
+    word-wrap: break-word;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  
+  .toast-success {
+    background-color: #00d1b2;
+  }
+  
+  .toast-error {
+    background-color: #ff4d4f;
+  }
+  
+  .toast-warning {
+    background-color: #ffc107;
+    color: black; /* Needed for yellow bg */
+  }
+  
+  .toast-info {
+    background-color: #209cee;
+  }
+  
+  #week-board {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px;
+}
+
+.board {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin: 20px;
+    overflow-x: auto;
+  }
+  
+  .day-column {
+    width: 13%;
+    min-height: 300px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #fefefe;
+    flex-shrink: 0;
+  }
+  
+  .day-column h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .shift-card {
+    background-color: #e3f2fd;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: grab;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .fc-event {
+    cursor: move;
+    background-color: #48c774 !important; /* or any theme color you want */
+    border: none;
+    font-weight: bold;
+  }
+  .pending-accounts-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    margin-top: 30px;
+  }
+  
+  .pending-accounts-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pending-accounts-section li {
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .pending-accounts-section button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background-color: #00b894;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+
+  /* ✨ Add Availability Form Enhancements */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.availability-group {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.availability-group label {
+  font-weight: 600;
+  color: #1e1e2f;
+  font-size: 15px;
+}
+
+.availability-group input,
+.availability-group select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid #e0e0e0;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fdfdfd;
+}
+
+.availability-group input:focus,
+.availability-group select:focus {
+  border-color: #00d1b2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 209, 178, 0.2);
+}
+
+/* ✨ Gradient Button */
+.container button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(to right, #00d1b2, #00b89c);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 209, 178, 0.3);
+  width: 100%;
+}
+
+.container button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 209, 178, 0.4);
+}
+
+.container button:active {
+  transform: scale(0.98);
+}
+
+/* 📅 Calendar Container Styling */
+#calendar {
+  max-width: 90%;
+  margin: 30px auto 10px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 🔁 Swap Request Sections */
+#swapRequestsList,
+#outgoingSwapRequestsList {
+  max-width: 80%;
+  margin: 0 auto 30px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-family: 'Poppins', sans-serif;
+}
+
+#swapRequestsList p,
+#outgoingSwapRequestsList p {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  background: #f1f3f5;
+  border-radius: 8px;
+}
+
+/* 🟢 Swap Buttons */
+#swapRequestsList button,
+#outgoingSwapRequestsList button,
+#swapModal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#swapModal .modal-content button {
+  width: 100%;
+  max-width: 200px;
+  margin: 6px 0; /* gives top & bottom spacing */
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+
+/* ✅ Confirm Button */
+#confirmSwapBtn {
+  background: linear-gradient(to right, #00b894, #00cec9);
+  color: white;
+}
+
+#confirmSwapBtn:hover {
+  background: linear-gradient(to right, #00a884, #00b0b5);
+  box-shadow: 0 4px 12px rgba(0, 209, 178, 0.3);
+  transform: translateY(-1px);
+}
+
+/* ❌ Cancel Button */
+#swapModal button:not(#confirmSwapBtn) {
+  background-color: #eee;
+  color: #444;
+}
+
+#swapModal button:not(#confirmSwapBtn):hover {
+  background-color: #ddd;
+  transform: translateY(-1px);
+}
+
+/* 🔁 Modal Styles */
+.modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content select {
+  padding: 12px;
+  font-size: 14px;
+  margin: 16px 0;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Optional improvement */
+h2 {
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  color: #1e1e2f;
+}
+
+/* 🧼 Swap Row Styling */
+.swap-request-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  font-weight: 500;
+}
+
+/* 🧹 Make button cleaner & spaced */
+.swap-request-row button {
+  margin-left: 16px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  background-color: #eee;
+  color: #333;
+  font-weight: bold;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+.swap-request-row button:hover {
+  background-color: #ddd;
+  transform: translateY(-1px);
+}
+
+.reset-btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ccc, #ddd);
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 🛠️ Shift List Styling */
+#shiftList div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 🗑️ Remove Button Styling */
+#shiftList button {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-left: 12px;
+}
+
+#shiftList button:hover {
+  background-color: #e63946;
+}
+
+/* 📅 Form Inputs */
+input[type="text"],
+input[type="date"],
+select {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 8px 6px;
+  min-width: 180px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ➕ Add Shift Button */
+button[onclick="addShift()"] {
+  background: linear-gradient(135deg, #00d1b2, #00b89c);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 209, 178, 0.2);
+  transition: transform 0.2s ease;
+}
+
+button[onclick="addShift()"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 209, 178, 0.3);
+}
+
+/* 👤 Pending Accounts Section */
+.pending-accounts-section {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.pending-accounts-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pending-accounts-section li {
+  margin-bottom: 10px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pending-accounts-section button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pending-accounts-section button:first-of-type {
+  background-color: #10b981;
+  color: white;
+}
+
+.pending-accounts-section button:last-of-type {
+  background-color: #ef4444;
+  color: white;
+}
+
+
+/* 🎞️ Animation for shift entries */
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.shift-entry {
+  animation: fadeInSlide 0.4s ease forwards;
+  transition: all 0.3s ease;
+}
+
+.shift-entry.removing {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+#trashZone:hover {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+  transition: 0.2s ease;
+}
+
+/* 📱 Mobile Responsiveness Improvements */
+@media screen and (max-width: 1024px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  h1.title {
+    font-size: 28px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  .container, .register-page .container {
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .availability-group {
+    gap: 12px;
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="date"],
+  select {
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .register-page .form-buttons,
+  .register-page .role-selection {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .register-page .form-buttons button,
+  .register-page .reset-btn {
+    width: 100%;
+  }
+
+  .dashboard-controls {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #week-board {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .day-column {
+    width: 100% !important;
+    margin-right: 0;
+  }
+
+  canvas {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  footer {
+    font-size: 12px;
+    padding: 16px;
+  }
+}
+
+/* 🍔 Hamburger Styles */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+/* Show hamburger only below 768px */
+@media screen and (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  #navLinks {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    flex-direction: column;
+    background: #1e1e2f;
+    width: 100%;
+    padding: 0;
+  }
+  
+
+  #navLinks.nav-open {
+    max-height: 420px; /* you can adjust this depending on how tall your menu gets */
+    padding: 10px 0;
+  }
+  
+
+  nav ul li {
+    width: 100%;
+    padding: 0;
+  }
+
+
+  nav ul li a {
+    width: 100%;
+    display: block;
+    padding: 10px 12px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  #navLinks.nav-open li a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Hide role-sensitive nav items until JS determines visibility */
+#dashboardItem,
+#manageShiftsItem,
+#logoutItem {
+  display: none;
+}

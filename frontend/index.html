@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Scheduling App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="register-page">
+    <nav>
+        <div class="nav-container">
+          <span class="nav-logo">WorkSync</span>
+      
+          <button id="hamburger" class="hamburger">&#9776;</button>
+      
+          <ul id="navLinks">
+            <li><a href="landing.html">Home</a></li>
+            <li><a href="index.html">Add Availability</a></li>
+            <li><a href="calendar.html">Calendar</a></li>
+            <li id="dashboardItem"><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="dashboard_stats.html">📈 Analytics Dashboard</a></li>
+            <li id="manageShiftsItem" style="display: none;"><a href="manage_shifts.html">Manage Shifts</a></li>
+            <li id="loginItem"><a href="login.html">Login</a></li>
+            <li id="registerItem"><a href="register.html">Register</a></li>
+            <li id="logoutItem" style="display: none;"><a href="#" onclick="logoutUser()">Logout</a></li>
+            <li><a href="https://worksynclms.duckdns.org/" target="_blank">WorkSync LMS</a></li>
+          </ul>
+        </div>
+      </nav>
+      
+
+    <h1 class="title">AI Scheduling App</h1>
+
+    <div class="container">
+        <div id="availabilityForm" style="display: none;">
+            <h2>Add Availability</h2>
+            <div class="availability-group">
+                <label for="availability-date">Date:</label>
+                <input type="date" id="availability-date" required>
+            
+                <label for="start-time">Start Time:</label>
+                <select id="start-time" required>
+                    <option value="">Select start time</option>
+                    <option value="6 AM">6 AM</option>
+                    <option value="7 AM">7 AM</option>
+                    <option value="8 AM">8 AM</option>
+                    <option value="9 AM">9 AM</option>
+                    <option value="10 AM">10 AM</option>
+                    <option value="11 AM">11 AM</option>
+                    <option value="12 PM">12 PM</option>
+                    <option value="1 PM">1 PM</option>
+                    <option value="2 PM">2 PM</option>
+                    <option value="3 PM">3 PM</option>
+                    <option value="4 PM">4 PM</option>
+                    <option value="5 PM">5 PM</option>
+                    <option value="6 PM">6 PM</option>
+                    <option value="7 PM">7 PM</option>
+                    <option value="8 PM">8 PM</option>
+                    <option value="9 PM">9 PM</option>
+                </select>
+            
+                <label for="end-time">End Time:</label>
+                <select id="end-time" required>
+                    <option value="">Select end time</option>
+                    <option value="7 AM">7 AM</option>
+                    <option value="8 AM">8 AM</option>
+                    <option value="9 AM">9 AM</option>
+                    <option value="10 AM">10 AM</option>
+                    <option value="11 AM">11 AM</option>
+                    <option value="12 PM">12 PM</option>
+                    <option value="1 PM">1 PM</option>
+                    <option value="2 PM">2 PM</option>
+                    <option value="3 PM">3 PM</option>
+                    <option value="4 PM">4 PM</option>
+                    <option value="5 PM">5 PM</option>
+                    <option value="6 PM">6 PM</option>
+                    <option value="7 PM">7 PM</option>
+                    <option value="8 PM">8 PM</option>
+                    <option value="9 PM">9 PM</option>
+                    <option value="10 PM">10 PM</option>
+                </select>
+            </div>
+            
+            <button onclick="submitAvailability()">Submit</button>
+        </div>
+    </div>
+    
+    
+
+    <script src="script.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const role = sessionStorage.getItem("role");
+    if (!role) {
+        alert("You must be logged in to access this page.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    document.getElementById("availabilityForm").style.display = "block";
+    updateNavbarVisibility();
+});
+
+
+    </script>
+    <footer>
+        <p>This project was created as part of an academic course at George Mason University and is intended for educational purposes only. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById("hamburger").addEventListener("click", () => {
+          document.getElementById("navLinks").classList.toggle("nav-open");
+        });
+      </script>
+      
+</body>
+</html>
