@@ -61,5 +61,5 @@ python app.py
 ### 5. View the frontend:
 Open frontend/landing.html in your browser or set up a Flask static route.
 
-###📬 Contact
+### 📬 Contact
 Made by @akhimed – built for educational purposes (George Mason University Capstone Project)
