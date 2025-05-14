@@ -25,24 +25,23 @@ A fullstack intelligent scheduling platform for businesses, built using:
 
 ## 📁 Project Structure
 📦 AI-Scheduling-App
- ├── backend/ \n
- │ ├── app.py \n
- │ ├── scheduler.py \n
- │ ├── database.py \n
- │ ├── requirements.txt \n
- ├── frontend/ \n
- │ ├── *.html \n
- │ ├── script.js \n
- │ ├── styles.css \n
- ├── .gitignore \n
+ ├── backend/  <br>
+ │ ├── app.py  <br>
+ │ ├── scheduler.py <br>
+ │ ├── database.py <br>
+ │ ├── requirements.txt <br>
+ ├── frontend/ <br>
+ │ ├── *.html <br>
+ │ ├── script.js <br>
+ │ ├── styles.css <br>
+ ├── .gitignore <br>
 
 ## 📌 Setup Instructions
 
 ### 1. Clone the repo:
 git clone https://github.com/akhimed/AI-Scheduling-App.git
 
-   
-### 2. Set up your backend:
+  ### 2. Set up your backend:
 cd backend
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
