@@ -39,7 +39,7 @@ A fullstack intelligent scheduling platform for businesses, built using:
 ## 📌 Setup Instructions
 
 ### 1. Clone the repo:
-   git clone https://github.com/akhimed/AI-Scheduling-App.git
+git clone https://github.com/akhimed/AI-Scheduling-App.git
 
    
 ### 2. Set up your backend:
