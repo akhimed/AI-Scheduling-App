@@ -24,4 +24,42 @@ A fullstack intelligent scheduling platform for businesses, built using:
 - **Deployment:** AWS EC2 (Ubuntu), Gunicorn, Nginx
 
 ## 📁 Project Structure
+📦 AI-Scheduling-App
+├── backend/
+│ ├── app.py
+│ ├── scheduler.py
+│ ├── database.py
+│ ├── requirements.txt
+├── frontend/
+│ ├── *.html
+│ ├── script.js
+│ ├── styles.css
+├── .gitignore
+
+## 📌 Setup Instructions
+
+### 1. Clone the repo:
+   bash
+   git clone https://github.com/akhimed/AI-Scheduling-App.git
+
+   
+### 2. Set up your backend:
+cd backend
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+
+### 3. Configure your .env file:
+OPENAI_API_KEY=your-key
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=your-password
+DB_NAME=worksync
+
+### 4. Run the Flask app:
+python app.py
+
+### 5. View the frontend:
+Open frontend/landing.html in your browser or set up a Flask static route.
+
 
