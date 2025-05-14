@@ -24,7 +24,7 @@ A fullstack intelligent scheduling platform for businesses, built using:
 - **Deployment:** AWS EC2 (Ubuntu), Gunicorn, Nginx
 
 ## 📁 Project Structure <br>
- 📦 AI-Scheduling-App
+ 📦 AI-Scheduling-App <br>
  ├── backend/  <br>
  │ ├── app.py  <br>
  │ ├── scheduler.py <br>
