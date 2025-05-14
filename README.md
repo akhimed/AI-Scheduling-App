@@ -39,7 +39,6 @@ A fullstack intelligent scheduling platform for businesses, built using:
 ## 📌 Setup Instructions
 
 ### 1. Clone the repo:
-   bash
    git clone https://github.com/akhimed/AI-Scheduling-App.git
 
    
@@ -62,4 +61,5 @@ python app.py
 ### 5. View the frontend:
 Open frontend/landing.html in your browser or set up a Flask static route.
 
-
+###📬 Contact
+Made by @akhimed – built for educational purposes (George Mason University Capstone Project)
